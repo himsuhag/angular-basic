@@ -9,6 +9,12 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ShippingComponent } from './shipping/shipping.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,15 +22,22 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductAlertsComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    ReactiveFormsModule
+    // CommonModule
   ],
-  providers: [],
+  providers: [
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
